@@ -1,0 +1,61 @@
+<section>
+    <h1>Sistema Acadêmico</h1>
+</section>
+
+<section>
+    <div class="formulario">
+        <div class="formulario__content">
+
+            <div class="card">
+                <div class="card-body">
+                    <form [formGroup]="formCadastro" method="post" action="" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="usuario">Usuário:</label>
+                            <input type="text" class="form-control" name="usuario" id="usuario"
+                                formControlName="usuario" required>
+                            <span *ngIf="formCadastro.controls['usuario'].errors">
+                                Campo obrigatório!
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo:</label>
+                            <select class="form-control" name="tipo" id="tipo" formControlName="tipo" required>
+                                <option value="1">Matrícula</option>
+                                <option value="2">E-mail</option>
+                                <option value="3">Nome do usuário</option>
+                            </select>
+                            <span *ngIf="formCadastro.controls['tipo'].errors">
+                                Campo obrigatório!
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha:</label>
+                            <input type="password" class="form-control" name="senha" id="senha" formControlName="senha"
+                                required>
+                            <span *ngIf="formCadastro.controls['senha'].errors">
+                                Campo obrigatório!
+                            </span>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label for="confirmarSenha">Confirmar senha:</label>
+                                <input type="password" class="form-control" name="confirmarSenha" id="confirmarSenha"
+                                    formControlName="confirmarSenha" required>
+                                <span *ngIf="formCadastro.controls['confirmarSenha'].errors">
+                                    Campo obrigatório!
+                                </span>
+                            </div>
+                        </div>
+
+                        <button type="submit" (click)="acessar()" class="btn_access"
+                            enabled="formCadastro.invalid">Acessar</button>
+
+                        <div class="form-row">
+                            <a href="/comum/solicitar trocar senha/">Esqueceu ou deseja alterar sua senha?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
