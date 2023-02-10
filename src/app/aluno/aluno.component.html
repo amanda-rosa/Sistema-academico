@@ -13,14 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let aluno of alunos | async">
-          <td>{{aluno.nome}}</td>
-          <td>{{aluno.matricula}}</td>
-          <td>{{aluno.email}}</td>
-          <td>{{aluno.senha}}</td>
-          <td><button (click)="delete(aluno.id)" class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
+        
       </tbody>
     </table>
   </div>
