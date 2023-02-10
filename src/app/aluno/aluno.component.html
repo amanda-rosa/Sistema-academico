@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Alunos</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Matricula</th>
+          <th>Email</th>
+          <th>Senha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let aluno of alunos | async">
+          <td>{{aluno.nome}}</td>
+          <td>{{aluno.matricula}}</td>
+          <td>{{aluno.email}}</td>
+          <td>{{aluno.senha}}</td>
+          <td><button (click)="delete(aluno.id)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
